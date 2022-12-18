@@ -1,0 +1,25 @@
+{
+    "name": "yuyue8/tpcores",
+    "authors": [
+        {
+            "name": "yuyue8",
+            "email": "909719666@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Yuyue8\\Tpcores\\": "src/"
+        }
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "Yuyue8\\Tpcores\\Service"
+            ]
+        }
+    }
+}
