@@ -40,15 +40,25 @@ c,d,m,s：所创建的多个类别，也可只创建一个类别，如：c
 3.2、支持类型
 
 `Cache`：缓存层，参数：cache|c
+
 `Controller`：控制器层，参数：controller|C
+
 `Dao`：dao层，参数：dao|d|D
+
 `Exception`：异常处理，参数：exception|e|E
+
 `Jobs`：消息队列，参数：jobs|j|J
+
 `Listener`：事件监听，参数：listener|l|L
+
 `Middleware`：中间件，参数：middleware|M
+
 `Model`：model层，参数：model|m
+
 `Services`：Services层，参数：services|s
+
 `Subscribe`：事件订阅，参数：subscribe|S
+
 `Validate`：验证器，参数：validate|v|V
 
 4、类介绍
