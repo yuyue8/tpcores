@@ -55,20 +55,18 @@ abstract class Make extends Command
 
         $class = str_replace($namespace . '\\', '', $name);
 
-        $namespacePrefix = $this->getNamespace();
-
         return str_replace(['{%className%}', '{%classNameSnake%}', '{%namespace%}', '{%namespaceSuffix%}', '{%namespacePrefix%}'], [
             $class,
             Str::snake($class),
             $namespace,
-            str_replace($namespacePrefix . '\\' . $this->type . '\\', '', $name),
-            $namespacePrefix
+            str_replace($this->getNamespace() . '\\' . $this->type . '\\', '', $name),
+            $this->getNamespace(true)
         ], $stub);
     }
 
     protected function getPathName(string $name): string
     {
-        return $this->app->getRootPath() . ltrim(str_replace('\\', '/', $name), '/') . Str::studly($this->type) . '.php';
+        return $this->app->getRootPath() . ltrim(str_replace('\\', '/', $name), '/') . ($this->type != 'controller' ? Str::studly($this->type) : '') . '.php';
     }
 
     protected function getClassName(string $name): string
@@ -85,20 +83,20 @@ abstract class Make extends Command
         return $this->getNamespace() . '\\' . $this->type . '\\' . $name;
     }
 
-    protected function getNamespace(): string
+    protected function getNamespace(bool $is_cores = false): string
     {
-        return Env::get('tpcores.namespace','cores');
+        return ($this->type != 'controller' || $is_cores) ? Env::get('tpcores.namespace','cores') : 'app';
     }
 
     public function createBase(Output $output)
     {
-        if(!in_array($this->type,['cache','dao','exception','jobs','model','services','validate'])){
+        if(!in_array($this->type,['cache','dao','exception','jobs','model','services','validate','controller'])){
             return true;
         }
 
         $name = 'Base' . Str::studly($this->type);
 
-        $classname = $this->getNamespace() . '\\basic\\' . $name;
+        $classname = $this->getNamespace(true) . '\\basic\\' . $name;
 
         $pathname = $this->app->getRootPath() . ltrim(str_replace('\\', '/', $classname), '/') . '.php';
 

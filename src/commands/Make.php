@@ -9,9 +9,10 @@ class Make extends Command
 {
 
     public $types = [
+        'controller' => 'Controller',
+        'C'          => 'Controller',
         'cache'      => 'Cache',
         'c'          => 'Cache',
-        'C'          => 'Cache',
         'dao'        => 'Dao',
         'd'          => 'Dao',
         'D'          => 'Dao',

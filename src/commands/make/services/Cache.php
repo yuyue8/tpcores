@@ -11,6 +11,6 @@ class Cache extends Make
     protected function configure()
     {
         $this->setName('make:cache')
-            ->setDescription('Create a new dao class');
+            ->setDescription('Create a new cache class');
     }
 }
