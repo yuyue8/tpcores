@@ -1,0 +1,17 @@
+<?php
+
+namespace {%namespace%};
+
+use Yuyue8\Tpcores\interfaces\ListenerInterface;
+
+/**
+ * Class {%className%}Listener
+ * @package {%namespace%}
+ */
+class {%className%}Listener implements ListenerInterface
+{
+    public function handle($event)
+    {
+
+    }
+}

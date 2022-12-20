@@ -1,0 +1,33 @@
+<?php
+namespace {%namespace%};
+
+use {%namespacePrefix%}\basic\BaseValidate;
+
+/**
+ * Class {%className%}Validate
+ * @package {%namespace%}
+ */
+class {%className%}Validate extends BaseValidate
+{
+
+    protected $rule = [
+        'id'       => 'require|length:1,30',
+    ];
+
+    protected $message = [
+        'id.require'                 => 'ID必须',
+        'id.isPositiveInteger'       => 'ID必须为正整数',
+        'id.isInteger'               => 'ID必须为非负整数',
+    ];
+
+    protected $scene = [
+        'save'   => ['id'],
+    ];
+
+    public function sceneUpdate()
+    {
+    	return $this->only(['id'])
+            ->remove('id', 'isPositiveInteger')
+            ->append('id', 'isInteger');
+    }   
+}

@@ -1,0 +1,22 @@
+<?php
+
+namespace {%namespace%};
+
+use {%namespacePrefix%}\basic\BaseJobs;
+use Yuyue8\Tpcores\traits\QueueTrait;
+
+/**
+ * Class {%className%}Job
+ * @package {%namespace%}
+ */
+class {%className%}Job extends BaseJobs
+{
+    use QueueTrait;
+
+    protected $queueName = '{%className%}Job';
+
+    public function doJob()
+    {
+        return true;
+    }
+}

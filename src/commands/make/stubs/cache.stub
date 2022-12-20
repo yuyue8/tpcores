@@ -1,0 +1,28 @@
+<?php
+namespace {%namespace%};
+
+use {%namespacePrefix%}\basic\BaseCache;
+use {%namespacePrefix%}\dao\{%namespaceSuffix%}Dao;
+
+/**
+ * Class {%className%}Cache
+ * @package {%namespace%}
+ */
+class {%className%}Cache extends BaseCache
+{
+    /** @var {%className%}Dao $dao */
+    protected $dao;
+
+    public function __construct({%className%}Dao $dao)
+    {
+        $this->dao = $dao;
+    }
+
+    /**
+     * 删除缓存
+     */
+    public function deleteAllCache($where=[])
+    {
+        
+    }
+}

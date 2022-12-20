@@ -1,0 +1,20 @@
+<?php
+namespace {%namespace%};
+
+use {%namespacePrefix%}\basic\BaseServices;
+use {%namespacePrefix%}\cache\{%namespaceSuffix%}Cache;
+
+/**
+ * Class {%className%}Services
+ * @package {%namespace%}
+ */
+class {%className%}Services extends BaseServices
+{
+    /** @var {%className%}Cache $cache */
+    protected $cache;
+
+    public function __construct({%className%}Cache $cache)
+    {
+        $this->cache = $cache;
+    }
+}

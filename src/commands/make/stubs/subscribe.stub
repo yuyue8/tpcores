@@ -1,0 +1,16 @@
+<?php
+namespace {%namespace%};
+
+/**
+ * Class {%className%}Services
+ * @package {%namespace%}
+ */
+class {%className%}Subscribe
+{
+
+    public function onOpen($event)
+    {
+        
+    }
+
+}

@@ -1,5 +1,7 @@
 {
     "name": "yuyue8/tpcores",
+    "description": "Swoole extend for thinkphp",
+    "license": "Apache-1.0",
     "authors": [
         {
             "name": "yuyue8",
@@ -8,6 +10,10 @@
     ],
     "require": {
         "php": ">=8.0.2"
+    },
+    "require-dev": {
+        "topthink/framework": "^6.0",
+        "topthink/think-queue": "^3.0"
     },
     "license": "MIT",
     "autoload": {
